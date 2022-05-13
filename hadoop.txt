@@ -1,0 +1,46 @@
+su hdoop
+
+hadoop fs -ls
+
+cd $HADOOP_HOME/sbin
+
+start-all.sh
+
+jps
+
+hadoop fs -ls /
+
+hadoop fs -ls /internet
+
+hadoop jar /home/shubham/Desktop/loganalyze.jar logAnalysis.SalesCountryDriver /internet/access_log_short.txt
+
+hadoop jar /home/shubham/Desktop/loganalyze.jar logAnalysis.SalesCountryDriver /internet/access_log_short.txt /internet/yesterday
+
+hadoop fs -ls /internet
+
+hadoop fs -ls /internet/yesterday
+
+hadoop fs -cat /internet/yesterday/part-00000
+
+stop-all.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hadoop fs -mkdir /anything
+
+hadoop fs -put /home/hdoop/access_log_short.txt /anything
+
+
